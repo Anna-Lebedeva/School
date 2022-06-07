@@ -1,0 +1,65 @@
+{% load static %}
+
+<div class="modal-form dialog2 dialog_reg" id="dialog_reg" style="display: none">
+    <div style="border-bottom: 1px solid #908bd9;">
+        <div style="float: right; margin-top: 15px; margin-right: 15px;cursor: pointer;"
+             onclick="document.getElementById('dialog_reg').style.display='none';$('#fade').css({display:'none'});
+             $('body').css({overflow: 'auto', width: '100%'})"
+        >
+            <img src="{% static 'img/close.png' %}" alt="x"></div>
+        <div class="h1" style="padding-top: 22px;
+    padding-left: 21px;
+    padding-bottom: 20px;
+    font-size: 21px;
+    color: white;">Заявка
+        </div>
+    </div>
+
+
+    <div class="h1 reg-label" style="padding-top: 22px;">Имя</div>
+    <div class="h1 reg-input">
+        <label>
+            <input type="text" class="input-field input_name" placeholder="Имя" size="38">
+        </label>
+    </div>
+
+    <div class="h1 reg-label">Телефон</div>
+    <div class="h1 reg-input">
+        <label>
+            <input type="tel" class="input-field input_phone" placeholder="Телефон" size="38">
+        </label>
+    </div>
+    <div class="result_reg_phone" style="display: none;"></div>
+
+    <div class="h1 reg-label">Адрес электронной почты</div>
+    <div style="border-bottom: 1px solid #908bd9;padding-bottom: 22px;">
+        <div id="stroshka-with-email" class="h1 reg-input" style="padding-bottom: 10px;">
+            <label>
+                <input type="text" class="input-field input_email" placeholder="Адрес электронной почты" size="38">
+            </label>
+        </div>
+        <div class="result_reg_email" style="display: none;"></div>
+    </div>
+
+    <input type="submit" class="btpr submit-btn-reg" value="Присоединиться к нам!" onclick="reg(this)">
+</div>
+
+<script type="text/javascript">
+    function dec2hex(dec) {
+        return dec.toString(16).padStart(2, "0")
+    }
+
+    function generateId(len) {
+        let arr = new Uint8Array((len || 40) / 2)
+        window.crypto.getRandomValues(arr)
+        return Array.from(arr, dec2hex).join('')
+    }
+
+    function reg(t) {
+        $(t).attr('disabled', 'disabled');
+        let name = $('.input_name').val();
+        let phone = $('.input_phone').val();
+        let email = $('.input_email').val();
+    }
+
+</script>

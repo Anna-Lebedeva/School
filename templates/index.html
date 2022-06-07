@@ -1,0 +1,341 @@
+{% load static %}
+
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Главная страница - Mercury School</title>
+    <meta lang="ru" content="Уроки по математике. Дистанционно. Онлайн доска. Подготовка ВПР, ОГЭ, ЕГЭ, повышение успеваемости." name="description">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'img/favicon/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/favicon/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'img/favicon/favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static 'img/favicon/site.webmanifest' %}">
+    <link rel="mask-icon" href="{% static 'img/favicon/safari-pinned-tab.svg' %}" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/Stratos LC Web.css' %}" type="text/css">
+    <link href="{% static 'css/calendar.css' %}" rel='stylesheet'/>
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+    {#    <meta name="yandex-verification" content="3793376a9581f55d"/>#}
+    <script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/jquery-ui.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/calendar.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/calendar-locales-all.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+    {#    <meta name='wmail-verification' content='7fc725a85fd175254b5f98ba8cd5f643'/>#}
+    <link rel="stylesheet" href="{% static 'css/jquery.bxslider.css' %}">
+    <script src="{% static 'js/jquery.bxslider.min.js' %}"></script>
+    {% include 'calendar_head.html' %}
+</head>
+<body>
+
+<script>
+    function hideModals() {
+        $('.dialog_reg').css({display: 'none'});
+        $('.dialog_auth').css({display: 'none'});
+        $('.dialog_calendar').css({display: 'none'});
+        $('.fade').css({display: 'none'});
+        $('body').css({overflow: 'auto', width: '100%'});
+    }
+</script>
+
+<div id="fade" class="fade" onclick="hideModals()"></div>
+
+{% include 'dialog_auth.html' %}
+{% include 'dialog_reg.html' %}
+{% include 'top_menu.html' %}
+
+<table class="body-table" style="height: 100%; width: 100%;" cellpadding="0" cellspacing="0">
+    <tbody>
+    <tr>
+        <td>
+            <div id="fullscreen-bg">
+                {#                <video loop="" muted="" autoplay="" poster="img/zvezdnoe.jpg" class="fullscreen-bg__video">#}
+                {#                    <source src="{% static 'video/starVideo.mp4' %}" type="video/mp4">#}
+                {#                </video>#}
+                <img src="{% static 'img/starVideo.gif' %}" alt="">
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div></div>
+        </td>
+        <td class="main_td">
+            <table style="height: 100%; width: 100%; box-shadow: 0 0 5px -2px #000;" cellpadding="0" cellspacing="0">
+                <tbody>
+                <tr>
+                    <td style="background-color: black;vertical-align: top;
+                text-align: -webkit-center;">
+
+                        <h1>Mercury School - инновационная школа математики
+                            <br><span>Уроки с преподавателем в онлайн-школе Mercury School</span>
+                        </h1>
+                        <p class="for-who">Для школьников любого возраста</p>
+
+                        <!--<div class="video_block" style="width: 300px">-->
+                        <div class="video_block">
+                            <video id="vid" width="100%" height="100%" autoplay muted loop>
+                                <source src="{% static 'video/videooschool2.mp4' %}"
+                                        type="video/mp4"/>
+                            </video>
+                            <!-- отключает нажатия правой кнопки мыши на видео-->
+                            <script>
+                                $(document).ready(function () {
+                                    $('#vid').mousedown(function (event) {
+                                        if (event.which === 3) {
+                                            $('#vid').bind('contextmenu', function () {
+                                                return false;
+                                            });
+                                        } else {
+                                            $('#vid').unbind('contextmenu');
+                                        }
+                                    });
+                                });
+                            </script>
+                        </div>
+                        <div id="about-school">
+                            <div class="info-card-block-left">
+                                <span class="info-card-title-left">Удобная платформа</span>
+                                <div class="info-card">Занятия проходят на интерактивной платформе "PlanetBoard"</div>
+                            </div>
+
+                            <div class="info-card-block-right">
+                                <span class="info-card-title-right">Персональная программа</span>
+                                <div class="info-card">Подготавливается на основе потребностей для каждого ученика</div>
+                            </div>
+
+                            <div class="info-card-block-left">
+                                <span class="info-card-title-left">Гибкое расписание</span>
+                                <div class="info-card">Ученику доступен любой временной промежуток рабочего времени
+                                    учителя.
+                                    Занятия можно легко и удобно переносить
+                                </div>
+                            </div>
+
+                            <div class="info-card-block-right">
+                                <span class="info-card-title-right">Квалифицированные педагоги</span>
+                                <div class="info-card">Отбор кандидатов проходит в несколько этапов:
+                                    устное собеседование, тестирование, проведение пробных занятий.
+                                    Учителя имеют соответствующий опыт, регулярно проходят повышение квалификации
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <div id="our-prices">
+                            <h2 class="pakety-zanyatiy">
+                                Пакеты занятий</h2>
+                        </div>
+
+                        <table class="prices">
+                            <tr>
+                                <td style="text-align: center;">
+                                    <div style="display: table-cell; padding: 10px">
+                                        <div id="first-card" class="price-card">
+                                            <img src="{% static 'img/price/big love.png' %}" class="price-card-img"
+                                                 alt="">
+                                            <h3 class="card-title" style="color: rgb(248,0,0);">8 уроков</h3>
+                                            <p class="card-text">Протестировать занятия на платформе PlanetBoard, понять
+                                                насколько подходит
+                                                формат</p>
+                                            <!--        <p class="card-text price">750 р. за урок</p>-->
+                                        </div>
+                                    </div>
+                                    <div style="display: table-cell; padding: 10px">
+                                        <div id="second-card" class="price-card">
+                                            <img src="{% static 'img/price/big cap.png' %}" class="price-card-img"
+                                                 alt="">
+                                            <h3 class="card-title" style="color: rgb(64,0,248);">16 уроков</h3>
+                                            <p class="card-text">Подтянуться по школьной программе</p>
+                                            <!--        <p class="card-text price">700 р. за урок</p>-->
+                                        </div>
+                                    </div>
+                                    <div style="display: table-cell; padding: 10px">
+                                        <div id="third-card" class="price-card">
+                                            <img src="{% static 'img/price/brain64.png' %}" class="price-card-img"
+                                                 alt="">
+                                            <h3 class="card-title" style="color: rgb(255,37,155);">64 урока</h3>
+                                            <p class="card-text">Стать гуру математики, удивить родителей и учителей</p>
+                                            <!--        <p class="card-text price">600 р. за урок</p>-->
+                                        </div>
+                                    </div>
+                            </tr>
+
+                        </table>
+
+
+                        <div class="banner_mobile">
+                            <div class="slider1">
+                                <div class="banner_pic1 table_banner">
+                                    <div class="price-card">
+                                        <img src="{% static 'img/price/big love.png' %}" class="price-card-img" alt="">
+                                        <p class="card-title" style="color: rgb(248,0,0);">8 уроков</p>
+                                        <p class="card-text">Протестировать занятия на платформе PlanetBoard, понять
+                                            насколько
+                                            подходит формат</p>
+                                        <!--                <p class="card-text price">750 р. за урок</p>-->
+                                    </div>
+                                </div>
+
+                                <div class="banner_pic2 table_banner">
+                                    <div class="price-card">
+                                        <img src="{% static 'img/price/big cap.png' %}" class="price-card-img" alt="">
+                                        <p class="card-title" style="color: rgb(64,0,248);">16 уроков</p>
+                                        <p class="card-text">Подтянуться по школьной программе</p>
+                                        <!--                <p class="card-text price">700 р. за урок</p>-->
+                                    </div>
+                                </div>
+                                <div class="banner_pic3 table_banner">
+                                    <div class="price-card">
+                                        <img src="{% static 'img/price/brain64.png' %}" class="price-card-img" alt="">
+                                        <p class="card-title" style="color: rgb(255,37,155);">64 урока</p>
+                                        <p class="card-text">Стать гуру математики, удивить родителей и учителей</p>
+                                        <!--                <p class="card-text price">600 р. за урок</p>-->
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <script type="text/javascript">
+                            $(document).ready(function () {
+                                $('.slider1').bxSlider();
+                            });
+                        </script>
+                        <style>
+                            .card-title {
+                                font-size: 17px;
+                                font-weight: bold;
+                            }
+                        </style>
+
+
+                        <script type="text/javascript">
+                            let bannerPic = 1;
+
+                            //Право
+                            function banner_next() {
+                                bannerPic++;
+                                if (bannerPic >= 3) {
+                                    bannerPic = 3;
+                                }
+                                console.log(bannerPic);
+                                hideDiv(bannerPic);
+                            }
+
+                            //Лево
+                            function banner_first() {
+                                bannerPic--;
+                                if (bannerPic <= 1) {
+                                    bannerPic = 1;
+                                }
+                                console.log(bannerPic);
+                                hideDiv(bannerPic);
+                            }
+
+
+                            function hideDiv(bannerPic) {
+                                let animation_length = 400;
+                                if (bannerPic === 1) {
+                                    $('.banner_pic3').hide(400)
+                                    $('.banner_pic2').hide(400);
+                                    $('.banner_pic1').show(400);
+                                }
+
+                                if (bannerPic === 2) {
+                                    $('.banner_pic1').hide(400)
+                                    $('.banner_pic3').hide(400)
+                                    $('.banner_pic2').show(400);
+
+                                }
+
+                                if (bannerPic === 3) {
+                                    $('.banner_pic1').hide(400)
+                                    $('.banner_pic2').hide(400)
+                                    $('.banner_pic3').show(400);
+                                }
+                            }
+                        </script>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td style="background-color: #000000; vertical-align: top; text-align: center; color: rgb(56 131 202); height: 50px;">
+
+
+                        <style>
+                            .button {
+                                background-color: #000000;
+                                color: white;
+                                padding: 12px 17px;
+                                text-align: center;
+                                text-decoration: none;
+                                display: inline-block;
+                                font-size: 16px;
+                                margin: 6px 0;
+                                cursor: pointer;
+                                border-radius: 50px;
+                                border: 2px solid rgb(56 131 202);
+                                -webkit-transition-duration: 0.4s;
+                                transition-duration: 0.4s;
+                            }
+
+                            /*.button:hover {*/
+                            /*    background-color: #4CAF50; !* Green *!*/
+                            /*    color: white;*/
+                            /*}*/
+                            .button:hover {
+                                box-shadow: 0 8px 16px 0 rgb(255, 115, 0), 0 6px 20px 0 rgb(255, 183, 0);
+                            }
+
+                            .button-up {
+                                background-color: rgb(74 92 112);
+                                border: none;
+                                /*color: #8b51ff;*/
+                                color: #d7c3ff;
+                                text-align: center;
+                                text-decoration: none;
+                                display: inline-block;
+                                font-size: 16px;
+                                cursor: pointer;
+                                padding-right: 10px;
+                            }
+                        </style>
+
+                        <div id="contacts">
+                            <span id="naverh">
+                <a href="#" class="button-up"><img src="{% static 'img/footer/up.png' %}" alt=""
+                                                   style="width: 36px;display: inline-block;"><span style="display: inline-block;
+        vertical-align: top; margin-top: 8px;">Подняться наверх</span></a>
+            </span>
+                            <span id="phone">
+                <button class="button"><img src="{% static 'img/footer/phone3.png' %}" alt=""
+                                            style="width: 32px;display: inline-block;"><span style="display: inline-block; vertical-align: top;
+        margin-top: 8px;">+7 (999) 020-50-74</span></button>
+            </span>
+                        </div>
+
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+        </td>
+
+        <td>
+            <div></div>
+        </td>
+
+
+    </tr>
+
+    </tbody>
+</table>
+
+</body>
+</html>
